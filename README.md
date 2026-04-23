@@ -1,5 +1,4 @@
 # Cronometro
-> Cronometro Feito em C\
 > Usei o sox pra tocar os wav
 - tempo limite ( -1 = "ilimitado" (60:00:00) )
 ```c
