@@ -1,0 +1,7 @@
+# Cronometro 
+> Cronometro Feito em C\
+> Usei o sox pra tocar os wav
+- tempo limite (-1 = ilimitado)
+```c
+if(hora == 0 && min == 1 && seg == 0)
+```
