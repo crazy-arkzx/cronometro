@@ -12,4 +12,4 @@ if ! command -v gcc &> /dev/null; then
     sudo apt install -y gcc
 fi
 
-gcc -o main main.c && ./main
+clang -w src/main.c -o bin/main && ./main
