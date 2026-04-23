@@ -11,4 +11,4 @@ chmod +x ./build.sh && ./build.sh
 ```
 bagulho e pra linux, quiser windows adapta ai
 
-valeu deviceblack/cheskie/calasans pelas dicas 🫪
+valeu [deviceblack](https://github.com/odeviceblack)/[cheskie](https://github.com/mad-cheski)/[calasans](https://github.com/ocalasans) pelas dicas 🫪
