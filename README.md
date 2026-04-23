@@ -5,3 +5,7 @@
 ```c
 if(hora == 0 && min == 1 && seg == 0)
 ```
+- compile/run
+```bash
+chmod +x ./build.sh && ./build.sh
+```
