@@ -10,3 +10,5 @@ if(hora == 0 && min == 1 && seg == 0)
 chmod +x ./build.sh && ./build.sh
 ```
 bagulho e pra linux, quiser windows adapta ai
+
+valeu deviceblack/cheskie/calasans pelas dicas 🫪
