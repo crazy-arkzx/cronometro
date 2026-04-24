@@ -19,15 +19,15 @@ int main()
 
         fflush(stdout);
 
-        if(hora == 0 && min == 1 && seg == 0)
+        if(hora == 0 && min == 0 && seg == 0)
         {
-            system("play -q sounds/end.wav");
+            system("play -q ../src/sounds/end.wav");
             break;
         }
 
         if(sec >= timemax)
         {
-            system("play -q sounds/max.wav");
+            system("play -q ../src/sounds/max.wav");
             break;
         }
 
