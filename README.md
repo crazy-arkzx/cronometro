@@ -2,7 +2,7 @@
 > Usei o sox pra rodar os wav
 - tempo limite ( -1 = "ilimitado" (60:00:00) )
 ```c
-if(hora == 0 && min == 1 && seg == 0)
+if(hora == 0 && min == 0 && seg == 0)
 ```
 - compile/run
 ```bash
