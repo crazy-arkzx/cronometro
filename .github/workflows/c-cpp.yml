@@ -1,12 +1,10 @@
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
-name: C/C++ CI
+name: C/C++ CI + Release
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
     branches: [ "main" ]
 
 jobs:
@@ -21,16 +19,34 @@ jobs:
         chmod +x build.sh
         ./build.sh
 
-    - name: Package everything
+    - name: Package source + binary
       run: |
-        mkdir release
-        cp -r . release/
-        rm -rf release/.git release/.github
-        zip -r release.zip release/
+        tar -czf cronometro-full.tar.gz --exclude=.git --exclude=.github .
 
-    - name: Upload full package
+    - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
-        name: release
-        path: release.zip
+        name: cronometro-package
+        path: cronometro-full.tar.gz
+
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Package for release
+      run: |
+        tar -czf cronometro-full.tar.gz --exclude=.git --exclude=.github .
+
+    - name: Create Release
+      uses: softprops/action-gh-release@v2
+      with:
+        tag_name: v${{ github.run_number }}
+        name: Build ${{ github.run_number }}
+        files: cronometro-full.tar.gz
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
