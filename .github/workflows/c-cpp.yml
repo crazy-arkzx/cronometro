@@ -9,13 +9,21 @@ on:
   pull_request:
     branches: [ "main" ]
 
-jobs:  
-  build: 
+jobs:
+  build:
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v4
+    
     - name: Build
       run: |
         chmod +x build.sh
         ./build.sh
+
+    - name: Upload binary artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: main
+        path: ./bin/main
+        
