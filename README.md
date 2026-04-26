@@ -1,4 +1,4 @@
-# C ronometro
+# Cronometro
 > Usei o sox pra rodar os wav
 - tempo limite ( -1 = "ilimitado" (60:00:00) )
 ```c
