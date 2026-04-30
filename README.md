@@ -1,5 +1,5 @@
 # Cronometro
-> Usei o sox pra rodar os wav
+> Usei o miniaudio pra rodar os wav
 - tempo limite ( -1 = "ilimitado" (60:00:00) )
 ```c
 if(hora == 0 && min == 0 && seg == 0)
