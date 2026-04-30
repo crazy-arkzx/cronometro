@@ -2,7 +2,8 @@
 
 #include <stdio.h>
 #include <time.h>
-#include "miniaudio.h"
+
+#include "../lib/miniaudio.h"
 
 int main() 
 {
