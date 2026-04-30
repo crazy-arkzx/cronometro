@@ -1,11 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
+#include <time.h>
 
 int main() 
 {
     int sec = 0;
     const int timemax = 60 * 3600;
+    struct timespec ts = {1, 0};
 
     while(1) 
     {
@@ -19,7 +20,7 @@ int main()
 
         fflush(stdout);
 
-        if(hora == 0 && min == 0 && seg == 0)
+        if(hora == 0 && min == 5 && seg == 0)
         {
             system("play -q ../src/sounds/end.wav");
             break;
@@ -31,7 +32,7 @@ int main()
             break;
         }
 
-        sleep(1);
+        nanosleep(&ts, NULL);
         sec++;
     }
     return 0;
