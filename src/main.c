@@ -1,12 +1,20 @@
+#define MINIAUDIO_IMPLEMENTATION
+
 #include <stdio.h>
-#include <stdlib.h>
 #include <time.h>
+#include "miniaudio.h"
 
 int main() 
 {
     int sec = 0;
     const int timemax = 60 * 3600;
     struct timespec ts = {1, 0};
+
+    ma_result result;
+    ma_engine engine;
+    
+    result = ma_engine_init(NULL, &engine);   
+    if(result != MA_SUCCESS) return -1;
 
     while(1) 
     {
@@ -22,18 +30,19 @@ int main()
 
         if(hora == 0 && min == 5 && seg == 0)
         {
-            system("play -q ../src/sounds/end.wav");
+            ma_engine_play_sound(&engine, "../src/sounds/end.wav", NULL);
             break;
         }
 
         if(sec >= timemax)
         {
-            system("play -q ../src/sounds/max.wav");
+            ma_engine_play_sound(&engine, "../src/sounds/max.wav", NULL);
             break;
         }
 
         nanosleep(&ts, NULL);
         sec++;
     }
+    ma_engine_uninit(&engine);
     return 0;
 }
