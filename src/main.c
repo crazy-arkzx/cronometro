@@ -31,13 +31,13 @@ int main()
 
         if(hora == 0 && min == 5 && seg == 0)
         {
-            ma_engine_play_sound(&engine, "../src/sounds/end.wav", NULL);
+            ma_engine_play_sound(&engine, "../assets/end.wav", NULL);
             break;
         }
 
         if(sec >= timemax)
         {
-            ma_engine_play_sound(&engine, "../src/sounds/max.wav", NULL);
+            ma_engine_play_sound(&engine, "../assets/max.wav", NULL);
             break;
         }
 
